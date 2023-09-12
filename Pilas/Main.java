@@ -36,7 +36,7 @@ public class Main {
         System.out.println("3.- Se imprimira el elemento de la cima de la pila.");
         System.out.println("> " + pila.obtenerCima() + "\n");
 
-        System.out.println("4.- Se vaciar\u00E1 la pila. \n");
+        System.out.println("4.- Se vaciara la pila. \n");
         pila.vaciar();
 
         System.out.println("5.- Se imprimira si la pila esta vacia: \n> " + pila.estaVacia());
