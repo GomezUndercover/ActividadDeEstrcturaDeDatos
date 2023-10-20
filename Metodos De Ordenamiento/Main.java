@@ -28,23 +28,24 @@ public class Main {
                     System.out.println("Antes: " + Arrays.toString(arrToBubbleSort));
                     BubbleSort.bubbleSort(arrToBubbleSort);
                     System.out.println("\nAhora: " + Arrays.toString(arrToBubbleSort));
+                    System.out.println();
                     break;
                 case 2:
-                    System.out.println("\nArray ordenado con QuickSort:");
+                    System.out.println("\nArray ordenado con QuickSort: \n");
                     System.out.println("Antes: " + Arrays.toString(arrToQuickSort));
                     int[] arrQuickSort = QuickSort.quickSort(arrToQuickSort);
                     System.out.println("Ahora: " + Arrays.toString(arrQuickSort));
                     System.out.println();
                     break;
                 case 3:
-                    System.out.println("\nArray ordenado con RadixSort:");
+                    System.out.println("\nArray ordenado con RadixSort: \n");
                     System.out.println("Antes: " + Arrays.toString(arrToRadixSort));
                     int[] arrRadixSort = RadixSort.radixSort(arrToRadixSort);
                     System.out.println("Ahora: " + Arrays.toString(arrRadixSort));
                     System.out.println();
                     break;
                 case 4:
-                    System.out.println("\nArray ordenado con MergeSort:");
+                    System.out.println("\nArray ordenado con MergeSort: \n");
                     System.out.println("Antes: " + Arrays.toString(arrToMergeSort));
                     int[] arrMergeSort = MergeSort.mergeSort(arrToMergeSort);
                     System.out.println("Ahora: " + Arrays.toString(arrMergeSort));
