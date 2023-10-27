@@ -47,7 +47,7 @@ public class BusquedaBinaria {
 
     }
 
-    public static double binarySearch(int[] arr, int search) {
+    public static int binarySearch(int[] arr, int search) {
         int inicio = 0;
         int fin = arr.length - 1;
         while (inicio <= fin) {
@@ -65,25 +65,25 @@ public class BusquedaBinaria {
     }
 
     public static void main(String[] args) {
-        Random r = new Random();
-        int low = 0;
-        int high = 1000;
-        int result = r.nextInt(high-low) + low;
-        double[] arr = new double[1000];
-
-        for (int i = 0; i < arr.length ; i++){
-            arr[i] = result;
+        int[] randomArr = new int[1000];
+        Random rand = new Random();
+        int last = 0;
+        for(int i = 0; i < 1000; i++){
+            int randomNumber = rand.nextInt(100) + 1 + last;
+            last = randomNumber;
+            randomArr[i] = randomNumber;
         }
 
-        System.out.println(Arrays.toString(ar));
+        System.out.println(Arrays.toString(randomArr));
         int search = 918;
+        int indice = binarySearch(randomArr, search);
 
         System.out.println("numero a encontrar: " + search);
-        if (binarySearch(arr, search) == -1) {
+        if (indice == -1) {
             System.out.println("El numero no existe en el arreglo");
         } else {
-            System.out.println("numero <" + arr[binarySearch(arr, search)]
-                    + "> encontrado en la posición : [" + binarySearch(arr, search) + "]");
+            System.out.println("numero <" + search
+                    + "> encontrado en la posición : [" + indice + "]");
         }
     }
 
