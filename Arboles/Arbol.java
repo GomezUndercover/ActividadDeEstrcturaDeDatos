@@ -91,6 +91,7 @@ public class Arbol<T> {
     }
 
     /**
+     * (NUEVO DE TAREA)
      * Obtiene la altura del árbol. 
      * Usando recursion podemos obtener la altura, considerando el el maximo de las dos alturas entre los nodos en cada camino
      * y luego se le suma 1, el mismo metodo se llamada para obtener la altura de cada subrama del arbol, y al final despues de 
