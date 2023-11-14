@@ -116,4 +116,45 @@ public class Arbol<T> {
 
         return 1 + Math.max(alturaIzquierda, alturaDerecha);
     }
+
+    /**
+     * Metodo que se llama en el main con el nodo a partir del cual se hara la impresion del subarbol.
+     * 
+     * Checamos si el nodo no es nulo y si no lo es, se hace las llamadas al metodo recursivo que realiza
+     * la impresion en consola del subarbol.
+     * 
+     * @param nodoIndicado
+     */
+    public void imprimirSubArbol(NodoArbol<T> nodoIndicado){
+        if(nodoIndicado != null){
+            System.out.println("Subarbol a partir de " + nodoIndicado.getDato() + ":");
+            imprimirSubArbol(nodoIndicado, 0);
+        } else {
+            System.out.println("El nodo es nulo. No es posible imprimir su subarbol");
+        }
+    }
+
+    /**
+     * Metodo que se llama dentro de la misma clase, para poder realizar la impresion del subarbol
+     * toma como parametros los siguientes y checa si no es nulo el nodo, si no lo es pasa por un bucle 
+     * que hace indentaciones segun el nivel de los nodos a partir del nodo indicado.
+     * De ahi, hace una llamada recursiva que imprime tanto los hijos y los hermanos del nodo indicado
+     * cada uno con sus propios hijos o hermanos.
+     * 
+     * @param nodo
+     * @param nivel
+     */
+    private void imprimirSubArbol(NodoArbol<T> nodo, int nivel){
+        if (nodo != null){
+            // impresion de nodo actual con indentacion segun el nivel del nodo, para visualizar de mejor manera el la impresion del subarbol
+            for(int i = 0; i < nivel ; i++){
+                System.out.println("\t");
+            }
+            System.out.println("- " + nodo.getDato());
+
+            //llamamos el metodo de nuevo para imprimir sus hijos y hermanos del nodo indicado
+            imprimirSubArbol(nodo.obtenerPrimerHijo(), nivel + 1);
+            imprimirSubArbol(nodo.obtenerSiguienteHermano(), nivel);
+        }
+    }
 }
