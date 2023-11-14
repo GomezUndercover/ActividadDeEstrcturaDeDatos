@@ -41,8 +41,9 @@ public class BusquedaBinaria {
             System.out.println("El numero no existe en el arreglo");
         } else {
             System.out.println("numero <" + search
-                    + "> encontrado en la posicion : [" + indice + "]");
+                    + "> encontrado en la posicion: [" + indice + "]");
         }
+        sc.close();
     }
 
 }
