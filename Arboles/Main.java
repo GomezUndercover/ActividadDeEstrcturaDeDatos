@@ -19,6 +19,8 @@ public class Main {
         NodoArbol<String> P = new NodoArbol<String>("P");
         NodoArbol<String> Q = new NodoArbol<String>("Q");
 
+
+        System.out.println("Arbol generico");
         arbol.agregarNodoArbol(arbol.obtenerRaiz(), B);
         arbol.agregarNodoArbol(arbol.obtenerRaiz(), C);
         arbol.agregarNodoArbol(arbol.obtenerRaiz(), D);
@@ -48,5 +50,44 @@ public class Main {
         arbol.imprimirArbol(Recorrido.INFIJO);
         System.out.println("Impresion en posfijo");
         arbol.imprimirArbol(Recorrido.POSFIJO);
+
+        System.out.println("Arbol esta vacio? : " + arbol.estaVacio());
+        System.out.println("Altura de arbol: " + arbol.obtenerAltura());
+
+        System.out.println("Arbol generico representado como binario");
+
+        Arbol<String> arbolBinario = new Arbol<String>(raiz, true);
+        arbolBinario.agregarNodoArbol(arbolBinario.obtenerRaiz(), B);
+        arbolBinario.agregarNodoArbol(B, E);
+        arbolBinario.agregarNodoArbol(B, F);
+
+        arbolBinario.agregarNodoArbol(E, F);
+        arbolBinario.agregarNodoArbol(F, J);
+        arbolBinario.agregarNodoArbol(J, K);
+        arbolBinario.agregarNodoArbol(K, L);
+
+        arbolBinario.agregarNodoArbol(C, D);
+        arbolBinario.agregarNodoArbol(D, G);
+
+        arbolBinario.agregarNodoArbol(G, M);
+        arbolBinario.agregarNodoArbol(G, H);
+        arbolBinario.agregarNodoArbol(M, P);
+        arbolBinario.agregarNodoArbol(P, Q);
+
+        arbolBinario.agregarNodoArbol(H, I);
+        arbolBinario.agregarNodoArbol(I, N);
+        arbolBinario.agregarNodoArbol(N, O);
+
+        System.out.println("Impresion en prefijo");
+        arbolBinario.imprimirArbol(Recorrido.PREFIJO);
+        System.out.println("Impresion en infijo");
+        arbolBinario.imprimirArbol(Recorrido.INFIJO);
+        System.out.println("Impresion en posfijo");
+        arbolBinario.imprimirArbol(Recorrido.POSFIJO);
+
+        System.out.println("Arbol esta vacio? : " + arbolBinario.estaVacio());
+        System.out.println("Altura de arbol: " + arbolBinario.obtenerAltura());
+
+        
     }
 }
