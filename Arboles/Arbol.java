@@ -79,4 +79,38 @@ public class Arbol<T> {
                 break;
         }
     }
+
+     /**
+     * (NUEVO DE TAREA) Verifica si el árbol está vacío.
+     *
+     * @return true si el árbol está vacío, false en caso contrario.
+     */
+
+    public boolean estaVacio(){
+        return raiz == null;
+    }
+
+    /**
+     * Obtiene la altura del árbol. 
+     * Usando recursion podemos obtener la altura, considerando el el maximo de las dos alturas entre los nodos en cada camino
+     * y luego se le suma 1, el mismo metodo se llamada para obtener la altura de cada subrama del arbol, y al final despues de 
+     * que se haya terminado la recursion, retorna el max de las alturas obtenidas y se le suma + 1.
+     *
+     * @return La altura del árbol.
+     */
+
+    public int obtenerAltura() {
+        return obtenerAltura(raiz);
+    }
+
+    private int obtenerAltura(NodoArbol<T> nodo){
+        if (nodo == null){
+            return -1; // el nodo usado como parametro no tiene hijos
+        }
+
+        int alturaIzquierda = obtenerAltura(nodo.obtenerPrimerHijo());
+        int alturaDerecha = obtenerAltura(nodo.obtenerSiguienteHermano());
+
+        return 1 + Math.max(alturaIzquierda, alturaDerecha);
+    }
 }
