@@ -98,6 +98,8 @@ public class Arbol<T> {
      * que se haya terminado la recursion, retorna el max de las alturas obtenidas y se le suma + 1.
      *
      * @return La altura del árbol.
+     * @param NodoArbol<T> este es el nodo que se usara en cada llamada del metodo para obtener la altura, los cuales
+     * seran los nodos en cada camino.
      */
 
     public int obtenerAltura() {
