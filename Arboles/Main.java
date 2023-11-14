@@ -88,6 +88,11 @@ public class Main {
         System.out.println("Arbol esta vacio? : " + arbolBinario.estaVacio());
         System.out.println("Altura de arbol: " + arbolBinario.obtenerAltura());
 
+
+        System.out.println("Impresion de subarbol a partir del nodo D del arbol binario");
+        arbolBinario.imprimirSubArbol(D);
+
+
         
     }
 }
