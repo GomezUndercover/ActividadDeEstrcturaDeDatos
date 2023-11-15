@@ -81,7 +81,7 @@ public class Arbol<T> {
     }
 
      /**
-     * (NUEVO DE TAREA) Verifica si el árbol está vacío.
+     * verifica si el árbol está vacío.
      *
      * @return true si el árbol está vacío, false en caso contrario.
      */
@@ -91,7 +91,6 @@ public class Arbol<T> {
     }
 
     /**
-
      * Obtiene la altura del árbol. 
      * Usando recursion podemos obtener la altura, el mismo metodo se llamada para obtener la altura de cada subrama del arbol, y al final despues de 
      * que se haya terminado la recursion, retorna el valor mayor de las dos alturas (izquierda y derecha) y se le suma 1.
