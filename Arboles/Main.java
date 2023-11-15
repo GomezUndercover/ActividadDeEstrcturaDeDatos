@@ -50,8 +50,8 @@ public class Main {
         arbol.imprimirArbol(Recorrido.INFIJO);
         System.out.println("\nImpresion en posfijo");
         arbol.imprimirArbol(Recorrido.POSFIJO);
-        
-        System.out.println("*******************************************");
+
+        System.out.println("\n*******************************************");
 
         System.out.println("---ARBOL BINARIO---");
 
@@ -72,23 +72,24 @@ public class Main {
         NodoArbol<String> O1 = new NodoArbol<String>("O");
         NodoArbol<String> P1 = new NodoArbol<String>("P");
         NodoArbol<String> Q1 = new NodoArbol<String>("Q");
+
         arbolBinario.agregarNodoArbol(arbolBinario.obtenerRaiz(), B1);
         arbolBinario.agregarNodoArbol(B1, E1);
-        arbolBinario.agregarNodoArbol(B1, C1);
 
         arbolBinario.agregarNodoArbol(E1, F1);
         arbolBinario.agregarNodoArbol(F1, J1);
         arbolBinario.agregarNodoArbol(J1, K1);
         arbolBinario.agregarNodoArbol(K1, L1);
 
+        arbolBinario.agregarNodoArbol(B1, C1);
         arbolBinario.agregarNodoArbol(C1, D1);
         arbolBinario.agregarNodoArbol(D1, G1);
 
         arbolBinario.agregarNodoArbol(G1, M1);
-        arbolBinario.agregarNodoArbol(G1, H1);
         arbolBinario.agregarNodoArbol(M1, P1);
         arbolBinario.agregarNodoArbol(P1, Q1);
 
+        arbolBinario.agregarNodoArbol(G1, H1);
         arbolBinario.agregarNodoArbol(H1, I1);
         arbolBinario.agregarNodoArbol(I1, N1);
         arbolBinario.agregarNodoArbol(N1, O1);
@@ -101,7 +102,9 @@ public class Main {
         arbolBinario.imprimirArbol(Recorrido.POSFIJO);
 
         System.out.println("\nArbol esta vacio? : " + arbolBinario.estaVacio());
-        System.out.println("\nAltura de arbol: " + arbolBinario.obtenerAltura());
+        NodoArbol<String> raizBinaria = arbolBinario.obtenerRaiz();
+        int altura = arbolBinario.obtenerAltura(raizBinaria);
+        System.out.println("\nAltura de arbol: " + altura);
 
         System.out.println("------------------------------------------------");
 

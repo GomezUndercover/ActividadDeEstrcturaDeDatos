@@ -91,30 +91,26 @@ public class Arbol<T> {
     }
 
     /**
-     * (NUEVO DE TAREA)
+
      * Obtiene la altura del árbol. 
-     * Usando recursion podemos obtener la altura, considerando el el maximo de las dos alturas entre los nodos en cada camino
-     * y luego se le suma 1, el mismo metodo se llamada para obtener la altura de cada subrama del arbol, y al final despues de 
-     * que se haya terminado la recursion, retorna el max de las alturas obtenidas y se le suma + 1.
+     * Usando recursion podemos obtener la altura, el mismo metodo se llamada para obtener la altura de cada subrama del arbol, y al final despues de 
+     * que se haya terminado la recursion, retorna el valor mayor de las dos alturas (izquierda y derecha) y se le suma 1.
      *
      * @return La altura del árbol.
      * @param NodoArbol<T> este es el nodo que se usara en cada llamada del metodo para obtener la altura, los cuales
      * seran los nodos en cada camino.
      */
-
-    public int obtenerAltura() {
-        return obtenerAltura(raiz);
-    }
-
-    private int obtenerAltura(NodoArbol<T> nodo){
-        if (nodo == null){
-            return -1; // el nodo usado como parametro no tiene hijos
+    public int obtenerAltura(NodoArbol<T> nodo) {
+        // Si el nodo es nulo, la altura del subárbol es 0
+        if (nodo == null) {
+            return 0;
         }
-
         int alturaIzquierda = obtenerAltura(nodo.obtenerPrimerHijo());
-        int alturaDerecha = obtenerAltura(nodo.obtenerSiguienteHermano());
+    
+        // aqui se calcula la altura del subárbol derecho directamente usando el siguiente hermano del primer hijo
+        int alturaDerecha = obtenerAltura(nodo.obtenerPrimerHijo() != null ? nodo.obtenerPrimerHijo().obtenerSiguienteHermano() : null);
 
-        return 1 + Math.max(alturaIzquierda, alturaDerecha);
+        return Math.max(alturaIzquierda, alturaDerecha) + 1;
     }
 
     /**
